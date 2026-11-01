@@ -1,4 +1,4 @@
-// GifAnim2 v1.1.1
+// RCX GifAnimation - Slideshowv 1.1.1 - by Lucifera Morningstar 2026
 // Plays the textures in this prim as sprite sheet animations, cycling through them when there's more than one, reading columns, rows, frame rate and optional frame count from each name (name;columns;rows;fps;frames).
 
 integer face = ALL_SIDES; // Face to show the animation on, or ALL_SIDES.
