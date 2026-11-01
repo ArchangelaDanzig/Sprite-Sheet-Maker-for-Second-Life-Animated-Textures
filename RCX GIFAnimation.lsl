@@ -1,4 +1,4 @@
-// GifAnim2 v1.0.1
+// GifAnim2 v1.0.1 - by Lucifera Morningstar 2026
 // Shows the first texture in this prim as a sprite sheet animation, reading columns, rows, frame rate and optional frame count from its name (name;columns;rows;fps;frames), then optionally deletes itself.
 
 integer face = ALL_SIDES; // Face to show the animation on, or ALL_SIDES.
