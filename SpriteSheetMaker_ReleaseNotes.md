@@ -1,5 +1,13 @@
 # Sprite Sheet Maker — Release Notes
 
+## v0.13.1
+- Draft translations for മലയാളം (Malayalam) and कोंकणी (Goan Konkani, in Devanagari).
+- Show Grid Lines now only redraws the lines instead of rebuilding the whole sheet.
+- In Stretch mode, changing the face shape no longer rebuilds the sheet or counts as an unsaved change, since the sheet doesn't depend on it. In Keep aspect it still does.
+- Switching language, changing display scale and ticking Keep the loop's length update the window without rebuilding the sheet.
+- The sheet preview's checkerboard background is made once and reused, and the animation previews swap the picture in place instead of redrawing it, using less CPU while playing.
+- Tidied unused code.
+
 ## v0.13.0
 - Remove Duplicates in the GIF Frames and Video Clip panels takes out frames that look the same as the frame kept before them. Similarity (50–100%, 100% to start) sets how alike they must be; 100% removes only exact copies.
 - Keep the loop's length (ticked to start) lowers the suggested rate so the loop lasts as long as before; unticked, the rate stays and the loop gets shorter.
