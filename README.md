@@ -62,7 +62,7 @@ View > Show Grid Lines shows or hides the cell grid on the sheet preview. View >
 The saved file is named like `clip1k;4;4;12.5;14.png`: the source name with the texture size (512, 1k or 2k), then the columns, the rows, the FPS and the number of frames, separated by semicolons. Whole rates are written without decimals (`10`, not `10.0`), and any semicolon in the source name is changed to an underscore. This is the `name;columns;rows;fps` layout that common texture animation scripts read from the texture's name when it's dropped into a prim, so the sheet can be used with them without renaming; scripts that don't know about the frame count ignore it. To set the animation yourself, use those numbers in your script:
 
 ```
-llSetTextureAnim(ANIM_ON | LOOP, ALL_SIDES, columns, rows, 0.0, frames, fps);
+llSetTextureAnim(ANIM_ON | LOOP, ALL_SIDES, columns, rows, 0.0, fps, frames);
 ```
 
 The number of frames is the last number in the file name and is also shown in the Result panel. If the grid has empty cells at the end, they're never shown as long as you pass the real frame count.
