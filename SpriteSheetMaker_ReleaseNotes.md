@@ -1,5 +1,36 @@
 # Sprite Sheet Maker — Release Notes
 
+## v0.13.0
+- Remove Duplicates in the GIF Frames and Video Clip panels takes out frames that look the same as the frame kept before them. Similarity (50–100%, 100% to start) sets how alike they must be; 100% removes only exact copies.
+- Keep the loop's length (ticked to start) lowers the suggested rate so the loop lasts as long as before; unticked, the rate stays and the loop gets shorter.
+- The Result panel says whether the duplicates were evenly repeated or pauses, and for videos how often the clip really changes and how much of it Frames to take would cover at that rate.
+- Undo puts back everything one Remove Duplicates took out in one step.
+- The Result panel's "Removed by clicking" is now "Removed frames", since it also counts duplicates.
+
+## v0.12.0
+- View > Language: the program can be shown in other languages, read from files in a `Languages` folder beside the program. Draft translations for Nederlands, Deutsch, Italiano, Español, Polski and Русский are included. The change applies straight away and is remembered; the first time, Windows' display language is used if there's a file for it. Anything a language file leaves out is shown in English.
+- Tooltips on buttons, boxes and dropdowns in the main window, the expanded preview, Preferences and GIF Settings. Greyed-out controls say why they're unavailable. View > Show Tooltips turns them off.
+- The Source and Result panels now give counts as labels ("Frames: 64", "Columns: 8, rows: 8"), which read correctly in every language.
+- Preferences: the grid size limit now reads "Limit columns and rows to" followed by the number.
+- Panels, dropdowns and the expanded preview's bottom bar widen to fit longer text.
+- Fixed: after opening a file or rotating, the Landscape/Portrait dropdown showed the rotation text (such as "No rotation"), and the text under the rotate buttons showed "Landscape". Rotating could also switch a portrait face shape to landscape.
+
+## v0.11.0
+- Rotate left, Rotate right, Flip horizontally and Flip vertically buttons in the GIF Frames and Video Clip panels. They turn every frame in place, so the play order is kept, and the text under them shows the result. Automatic layout follows the new shape, Save GIF uses the turned frames, and removed frames stay removed. The rotation is kept when frames are extracted again and resets when another file is opened.
+
+## v0.10.1
+- The expanded preview's playback buttons and Cell field are now on its bottom row, to the right of Length, leaving more room for the picture.
+- A snapped expanded preview follows the main window smoothly, without the flicker and jerky movement.
+- A snapped expanded preview now comes to the front with the main window (Alt+Tab, the taskbar or a click) instead of staying behind other programs. It has no taskbar button of its own while snapped.
+
+## v0.10.0
+- Playback buttons in both animation previews: Step back, Pause / Play, Step forward and Replay (now an icon instead of the word). Pausing in one preview pauses the other.
+- Cell field beside the buttons showing the cell on screen; type a cell number and press Enter to pause on it.
+- While paused, the mouse wheel over a preview steps one frame per notch.
+- Keyboard: Space pauses or plays, Left and Right arrows step one frame, except while typing in a box.
+- With Loop unticked, the preview now pauses on its last frame, and Play starts it again.
+- The expanded preview snaps against the main window when let go within about 20 pixels of it, then follows it when the main window is moved or resized, and is hidden while it's minimised. Dragging it away or maximising the main window separates it.
+
 ## v0.9.3
 - Sprite sheets are now named like `clip2k;8;8;10;57.png`: source name and texture size (512, 1k or 2k), then columns, rows, FPS and frame count, separated by semicolons. This matches the name layout common texture animation scripts read, so sheets work with them without renaming. Whole rates are written without ".0", and semicolons in the source name become underscores.
 
