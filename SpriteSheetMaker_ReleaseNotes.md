@@ -1,5 +1,23 @@
 # Sprite Sheet Maker — Release Notes
 
+## v0.19.2 (Rust)
+- Small screens: when a window's contents need more room than the screen has (the main window on a 1920 × 1080 screen at 100% with a file loaded went past the bottom of the screen), all the program's windows are drawn smaller by just enough to fit, down to about 80%; past that the left side scrolls. The main window also moves up when it grows past the bottom of the screen, and a remembered window size that no longer fits the screen is made smaller. Nothing changes on screens that are big enough.
+- The Crop window no longer locks the main window. Changing Start or End updates its slider, and changing Bars or the bar color updates its frame view, straight away. Opening another file or closing the file closes it without applying anything. OK is grayed out while the program is busy.
+- The Crop window can be resized (the frame view grows with it), snaps to the main window or the expanded preview like the expanded preview does, and reopens at its last size and position, snapped again if it was snapped.
+- Preferences has a new **Crop window opens** choice: its last position, or centered on a monitor.
+- Two new entries were added to the language files, with draft translations.
+
+## v0.19.1 (Rust)
+- **Include bars** in the Crop window lets the crop go past the picture's edges, up to where the whole picture fits inside it (for a Freehand crop, up to a square the size of the picture's long side). The extra part is filled in the bar color or left transparent, following Bars in the main window, and changes with that setting without extracting again. The frame view shows that area in the bar color, or as a checkerboard for transparent bars. It's ticked when the window opens if Frame fit is Keep aspect, and the crop then starts as the largest crop of the ratio that holds the whole picture.
+- Fixed: moving the Crop window's time slider to the end of a video showed "No frames were found in that range". It now shows the last frame.
+- Two new entries were added to the language files, with draft translations.
+
+## v0.19.0 (Rust)
+- **Crop**: a new **Crop...** button opens a Crop window for videos, animated images and image sequences. It shows a frame with a slider to move through the clip or the frames, and a crop frame you can move and resize. The crop keeps an aspect ratio (Orientation and Ratio, 1:1 to start) or, with **Freehand**, takes any shape; turning Freehand off snaps it to the closest ratio. X, Y, Width and Height boxes and a Reset button are included. See "Cropping" in the Readme.
+- The crop is made before frames are scaled down, so detail is kept. The Source panel shows the cropped size. The crop stays when frames are extracted again and is cleared when another file is opened. Changing it counts as an unsaved change.
+- Preferences, GIF Settings and messages now show the program's icon in their title bar, like the other windows.
+- 29 new entries were added to the language files, with draft translations.
+
 ## v0.18.2 (Rust)
 - The program has its own icon: a grid of frames with a play button. It shows on the .exe in Explorer, on shortcuts, on the taskbar, in Alt+Tab and in the title bars of the main window, the expanded preview and the Readme and Release Notes windows, at the right size for each monitor's scaling. It replaces egui's default logo.
 - Preferences, GIF Settings and messages no longer show an icon in their title bar, like Windows' own dialog boxes.
