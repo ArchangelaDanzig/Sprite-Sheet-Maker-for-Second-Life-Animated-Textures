@@ -1,12 +1,12 @@
 # Sprite Sheet Maker — Readme
 
-Current version: 0.18.2
+Current version: 0.19.2
 
 Sprite Sheet Maker is a Windows program that turns animated GIFs (also animated WebP and PNG), short video clips and image sequences (folders of numbered pictures) into square PNG sprite sheets for Second Life's `llSetTextureAnim`. It can also save video clips and image sequences as animated GIFs.
 
 ## Program folder
 Keep these files together in one folder of your choice:
-- `SpriteSheetMaker_v0.18.2.exe`: the program.
+- `SpriteSheetMaker_v0.19.1.exe`: the program.
 - `SpriteSheetMaker_Readme.md`: this guide, shown by Help > Readme.
 - `SpriteSheetMaker_ReleaseNotes.md`: what changed in each version, shown by Help > Release Notes.
 - `Languages` folder: one file per language besides English (see Language). Without it the program runs in English.
@@ -21,7 +21,9 @@ The menus are at the top. The left side holds the settings, the results, the Sav
 
 The window follows the display scale of the monitor it's on (100%, 125%, 150% and so on), and adjusts when you move it to a monitor with a different scale, the way Windows does: it keeps its size in Windows' scaled units, so it looks a little larger or smaller on screen. Preferences, the GIF Settings box, the expanded preview and the Readme and Release Notes windows do the same, each on their own.
 
-The window can't be made smaller than its contents need, and grows on its own when they need more room (for example when warnings appear in the Result panel), up to the size of the screen. If the screen is too small, the left side scrolls.
+The window can't be made smaller than its contents need, and grows on its own when they need more room (for example when warnings appear in the Result panel), up to the size of the screen. When it grows past the bottom of the screen it moves up to stay on it.
+
+On a small screen (for example 1920 × 1080 at 100%), where the window's contents would need more height than the screen has, everything in the program's windows is drawn a little smaller, just enough to fit, down to about 80% of the normal size so the text stays readable. Past that, the left side scrolls. Nothing changes on screens that are big enough. The same size is used for every window, based on the screen the main window is on, and is worked out again when the main window moves to another screen or a window opens that needs more room.
 
 ## Visual Mode
 **View > Visual Mode** switches between **Light**, **Dark** and **Use Windows Settings** (the default, which follows the "Choose your default app mode" setting in Windows' Personalization > Colors). The change applies straight away and is remembered.
@@ -123,6 +125,23 @@ Opens a separate window playing the animation at the chosen aspect ratio and FPS
 
 Let go of the expanded preview close to an edge of the main window (within about 20 pixels) and it snaps against that edge with no gap, lining up with the main window's top or bottom (or left or right) edge when it's close to that too. While snapped, it moves along when you move or resize the main window, comes to the front with it (from Alt+Tab, the taskbar or a click), and is hidden while the main window is minimized and comes back with it. It has no taskbar button of its own while snapped. Drag it away to separate it. Maximizing the main window also separates it.
 
+## Cropping
+**Crop...** (beside Extract Frames for video, and at the top of the GIF Frames and Sequence Frames panels) opens the Crop window, where you choose the part of the picture that goes on the sheet. It works for videos, animated GIFs, WebPs and PNGs, and image sequences.
+
+The window shows one frame, with the parts outside the crop shaded. The slider below it moves through the clip between Start and End, or through the frames, so you can check the crop fits the whole animation. At the very end of a clip it shows the last frame.
+
+- **Orientation** and **Ratio** keep the crop to an aspect ratio, such as 1:1 or 16:9. The crop starts as the largest centered 1:1 square that fits (see Include bars below).
+- With **Freehand** off, drag inside the crop to move it, and drag a corner to resize it; it keeps its ratio. The Width and Height boxes step in whole ratio steps (at 16:9, 16 pixels wide and 9 high), so the crop stays exactly that ratio in pixels.
+- With **Freehand** on, drag the handles on the edges and corners to give the crop any shape. Turning Freehand off again snaps the crop to the closest ratio, keeping its center.
+- **X**, **Y**, **Width** and **Height** set the crop in pixels; the mouse wheel works on them too. **Reset** goes back to the starting square.
+- **Include bars** lets the crop go past the picture's edges, up to where the whole picture fits inside it, so an upright phone video can become a square with bars at the sides. The extra part is filled like the bars: in the bar color, or transparent, as set under **Bars** in the main window, and it follows that setting even with Stretch. It's ticked when the window opens if Frame fit is Keep aspect. With it ticked, the crop starts as the largest crop of the ratio that holds the whole picture. Unticking it brings the crop back inside the picture. A Freehand crop can go out as far as a square the size of the picture's long side.
+
+The Crop window doesn't lock the main window: you can keep working there while it's open. Changing Start or End updates the slider straight away, and changing Bars or the bar color updates the frame view. Opening another file or closing the file closes the Crop window without applying anything. Extracting frames while it's open uses the crop already applied; OK is grayed out while the program is busy.
+
+The Crop window can be resized by dragging its edges; the frame view grows with it. Like the expanded preview, it snaps against an edge of the main window or the expanded preview when you let go of it close to one, follows that window while snapped, and comes loose when you drag it away. It's hidden while the main window is minimized and comes back with it. It reopens at its last size and position (snapped again if it was snapped), or centered on a monitor chosen in Preferences.
+
+The crop is made before frames are scaled down, so it keeps all the detail there is. The Source panel shows the cropped size. Rotating and flipping turn the cropped frames. Extracting frames again keeps the crop; opening another file starts without one. Changing the crop counts as a change to the sprite sheet.
+
 ## Rotating and flipping
 The four buttons on the right of the GIF Frames and Video Clip panels turn every frame:
 - **Rotate left** and **Rotate right**: a quarter turn counterclockwise or clockwise.
@@ -189,7 +208,7 @@ The checkboxes are separate from the preview's play modes, start unticked each t
 - **Frames**: frame fit, bars and bar color.
 - **Animation Preview**: orientation, aspect ratio, grid lines and the FPS presets (a comma-separated list).
 - **Video and Image Sequences**: frames to take (videos), the largest frame size, the default GIF width, the FPS image sequences start with, and "Limit frame size to save memory". The frame size settings apply to videos and image sequences.
-- **Windows**: where the main window and the expanded preview open: their last position, or centered on a chosen monitor. **Identify Monitors** shows each monitor's number on its screen for 2 seconds.
+- **Windows**: where the main window, the expanded preview and the Crop window open: their last position, or centered on a chosen monitor. **Identify Monitors** shows each monitor's number on its screen for 2 seconds.
 - **Folders**: whether Open and Save start in a default folder, and which folder (set it with **Browse...**).
 
 ## Folders
