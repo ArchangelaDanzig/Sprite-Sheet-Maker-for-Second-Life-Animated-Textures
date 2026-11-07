@@ -6,7 +6,7 @@ Sprite Sheet Maker is a Windows program that turns animated GIFs (also animated 
 
 ## Program folder
 Keep these files together in one folder of your choice:
-- `SpriteSheetMaker_v0.19.1.exe`: the program.
+- `SpriteSheetMaker_v0.19.2.exe`: the program.
 - `SpriteSheetMaker_Readme.md`: this guide, shown by Help > Readme.
 - `SpriteSheetMaker_ReleaseNotes.md`: what changed in each version, shown by Help > Release Notes.
 - `Languages` folder: one file per language besides English (see Language). Without it the program runs in English.
