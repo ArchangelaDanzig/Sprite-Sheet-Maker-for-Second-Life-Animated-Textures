@@ -1,12 +1,12 @@
 # Sprite Sheet Maker — Readme
 
-Current version: 0.19.2
+Current version: 0.19.3
 
 Sprite Sheet Maker is a Windows program that turns animated GIFs (also animated WebP and PNG), short video clips and image sequences (folders of numbered pictures) into square PNG sprite sheets for Second Life's `llSetTextureAnim`. It can also save video clips and image sequences as animated GIFs.
 
 ## Program folder
 Keep these files together in one folder of your choice:
-- `SpriteSheetMaker_v0.19.2.exe`: the program.
+- `SpriteSheetMaker_v0.19.3.exe`: the program.
 - `SpriteSheetMaker_Readme.md`: this guide, shown by Help > Readme.
 - `SpriteSheetMaker_ReleaseNotes.md`: what changed in each version, shown by Help > Release Notes.
 - `Languages` folder: one file per language besides English (see Language). Without it the program runs in English.
@@ -59,7 +59,7 @@ Resting the mouse on a button, box, dropdown or menu item for half a second show
    - **Keep aspect** keeps the picture's true proportions on the aspect ratio you choose in the animation preview, and fills the leftover space with **Bars**: either a solid **Color** (click the swatch to choose it; black to start) or **Transparent**.
    **Resize** chooses how frames are scaled to fit their cells: **Smooth** (the default) for videos and ordinary GIFs, or **Sharp** for pixel art, which keeps every pixel a crisp block. It also applies to Save GIF, and starts on Smooth each time the program opens.
 4. Click any frame in the sheet preview to remove it; later frames move back to fill the gap. **Undo** (Ctrl+Z) brings back the last removed frame (or everything the last Remove Duplicates took out) and **Restore All** (Ctrl+Shift+Z) brings back all of them. Both are also in the Edit menu.
-5. In the animation preview settings, choose the aspect ratio of the prim face the animation will play on (Landscape or Portrait, then a ratio), and the **FPS**. The play mode settings below them let you check how the sheet plays with different `llSetTextureAnim` settings (see Play modes). **Expand Preview** opens a larger, resizable preview window.
+5. In the animation preview settings, choose the aspect ratio of the prim face the animation will play on (Landscape or Portrait, then a ratio from the dropdown beside it), and the **FPS**. The play mode settings below them let you check how the sheet plays with different `llSetTextureAnim` settings (see Play modes). **Expand Preview** opens a larger, resizable preview window.
 6. Click **Save Sprite Sheet** (Ctrl+S). For videos and image sequences you can also click **Save GIF...** (Ctrl+Shift+S), which first opens GIF Settings.
 
 View > Show Grid Lines shows or hides the cell grid on the sheet preview. View > Preview picks the aspect ratio: 1:1 is at the top (it fits both orientations), and clicking the Landscape or Portrait heading switches the orientation, the same as the dropdown. Help > About shows the version.
@@ -121,7 +121,7 @@ llSetTextureAnim(ANIM_ON | LOOP | PING_PONG, ALL_SIDES, columns, rows, start, le
 When frames are removed or added back, or the grid changes, a range that covers every frame keeps doing so. Any other range is kept, trimmed if it no longer fits the grid. Opening a file or extracting frames resets it to every frame.
 
 ## Expand Preview
-Opens a separate window playing the animation at the chosen aspect ratio and FPS. It can be resized by dragging, and its height snaps back to the aspect ratio. The bar at the bottom has the same playback buttons, Cell field, orientation, FPS, ratio and play mode controls as the main window, and changes in either place apply to both. The small preview pauses while it's open.
+Opens a separate window playing the animation at the chosen aspect ratio and FPS. It can be resized by dragging, and its height snaps back to the aspect ratio. The bar at the bottom has the same orientation, ratio, FPS, play mode and playback controls and Cell field as the main window, and changes in either place apply to both. When the window is made narrow, the controls wrap onto more rows instead of being cut off; it can't be made narrower than its widest group of controls. The small preview pauses while it's open.
 
 Let go of the expanded preview close to an edge of the main window (within about 20 pixels) and it snaps against that edge with no gap, lining up with the main window's top or bottom (or left or right) edge when it's close to that too. While snapped, it moves along when you move or resize the main window, comes to the front with it (from Alt+Tab, the taskbar or a click), and is hidden while the main window is minimized and comes back with it. It has no taskbar button of its own while snapped. Drag it away to separate it. Maximizing the main window also separates it.
 
