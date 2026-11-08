@@ -1,5 +1,10 @@
 # Sprite Sheet Maker — Release Notes
 
+## v0.19.3 (Rust)
+- The aspect ratio is now chosen from a dropdown beside the orientation dropdown, in the main window's Animation Preview panel and in the expanded preview, instead of a row of buttons. FPS follows them on the same row.
+- The expanded preview's controls wrap onto more rows when the window is made narrow, so none are cut off at the right edge. The window can't be made narrower than its widest group of controls.
+- The Crop window can be made much smaller: the frame view's smallest size went from 720 × 480 to 360 × 240, and the Orientation and Ratio dropdowns are only as wide as their choices.
+
 ## v0.19.2 (Rust)
 - Small screens: when a window's contents need more room than the screen has (the main window on a 1920 × 1080 screen at 100% with a file loaded went past the bottom of the screen), all the program's windows are drawn smaller by just enough to fit, down to about 80%; past that the left side scrolls. The main window also moves up when it grows past the bottom of the screen, and a remembered window size that no longer fits the screen is made smaller. Nothing changes on screens that are big enough.
 - The Crop window no longer locks the main window. Changing Start or End updates its slider, and changing Bars or the bar color updates its frame view, straight away. Opening another file or closing the file closes it without applying anything. OK is grayed out while the program is busy.
