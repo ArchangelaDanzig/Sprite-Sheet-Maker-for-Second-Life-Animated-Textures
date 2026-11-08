@@ -1,5 +1,21 @@
 # Sprite Sheet Maker — Release Notes
 
+## v0.20.3 (Rust)
+- Faster: Save GIF prepares its frames on all cores instead of one at a time, which helps most with long GIFs. Image sequences open each file once instead of twice. Rotating and flipping turns each frame in one step. With the crop reaching into colored bars, the bars are filled on all cores and only for the frames on the sheet. Video frames are converted with one copy fewer. Filling empty cells and bars, and Remove Duplicates at 100%, are quicker too. Sheets, GIFs and frames are exactly the same as before.
+- Fixed: the program kept a record of every window it had given a dark title bar and icon, including closed ones. Closed windows are now forgotten, so a new window can't be mistaken for an old one and left without its dark title bar or icon.
+
+## v0.20.2 (Rust)
+- The Record Screen window has **Width** and **Height** boxes for the recorded area, like the Crop window's: − and + buttons, typing and the mouse wheel. The area keeps its center. With a ratio they change in whole ratio steps and move together; with Freehand each changes on its own. They go up to the largest size at which the whole recorder, controls included, still fits on the screen.
+- Four new entries were added to the language files, with draft translations.
+
+## v0.20.1 (Rust)
+- Fixed: on a screen too small for the main window (for example 1920 × 1080 with a long Result panel), the whole window kept growing and shrinking back and forth instead of settling at one size. Once the windows have been made smaller to fit, they now stay at that size until something changes what they hold (opening or closing a file, the Result text, the language, Preferences or the Crop window, or the screen).
+
+## v0.20.0 (Rust)
+- **Record Screen**: File > Record Screen... opens a frame with a see-through middle that records the part of the screen under it. It has Orientation, Ratio and Freehand like the Crop window, an FPS dropdown (5 to 30), and Record, Stop, Reset and Save buttons. Ctrl+Shift+F9 and Ctrl+Shift+F10 start and stop recording from any program while the recorder is open. Save opens the recording in the main window as a video clip named Recording0001, Recording0002 and so on. See "Recording the screen" in the Readme.
+- The recorded area is at least 480 pixels on its shorter side and must be on one monitor. The mouse pointer is left out, and Windows 11 draws no yellow border around the screen while recording.
+- 23 new entries were added to the language files, with draft translations.
+
 ## v0.19.3 (Rust)
 - The aspect ratio is now chosen from a dropdown beside the orientation dropdown, in the main window's Animation Preview panel and in the expanded preview, instead of a row of buttons. FPS follows them on the same row.
 - The expanded preview's controls wrap onto more rows when the window is made narrow, so none are cut off at the right edge. The window can't be made narrower than its widest group of controls.
