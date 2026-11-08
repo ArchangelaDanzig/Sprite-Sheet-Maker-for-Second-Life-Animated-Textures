@@ -1,6 +1,6 @@
 # Sprite Sheet Maker — Readme
 
-Current version: 0.20.3
+Current version: 0.20.3 (Source code to follow...first time setting up a Github repository, bear with me)
 
 Sprite Sheet Maker is a Windows program that turns animated GIFs (also animated WebP and PNG), short video clips and image sequences (folders of numbered pictures) into square PNG sprite sheets for Second Life's `llSetTextureAnim`. It can also save video clips and image sequences as animated GIFs.
 
