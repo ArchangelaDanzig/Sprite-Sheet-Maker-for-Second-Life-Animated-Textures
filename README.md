@@ -1,12 +1,12 @@
 # Sprite Sheet Maker — Readme
 
-Current version: 0.19.3
+Current version: 0.20.3
 
 Sprite Sheet Maker is a Windows program that turns animated GIFs (also animated WebP and PNG), short video clips and image sequences (folders of numbered pictures) into square PNG sprite sheets for Second Life's `llSetTextureAnim`. It can also save video clips and image sequences as animated GIFs.
 
 ## Program folder
 Keep these files together in one folder of your choice:
-- `SpriteSheetMaker_v0.19.3.exe`: the program.
+- `SpriteSheetMaker_v0.20.3.exe`: the program.
 - `SpriteSheetMaker_Readme.md`: this guide, shown by Help > Readme.
 - `SpriteSheetMaker_ReleaseNotes.md`: what changed in each version, shown by Help > Release Notes.
 - `Languages` folder: one file per language besides English (see Language). Without it the program runs in English.
@@ -193,6 +193,20 @@ The frames play in the order of their numbers, so `walk_2` comes before `walk_10
 
 A sequence starts at 10 FPS; you can change that in Preferences. Large pictures are scaled down the same way as video frames (see "Max frame size" and "Limit frame size to save memory" in Preferences). The bar in the Sequence Frames panel shows how far loading has got. Saving the sheet suggests the sequence's name without the number, for example `walk1k;4;4;10;16.png`.
 
+## Recording the screen
+**File > Record Screen...** opens a frame for recording part of the screen, for example an animation playing in a browser or another program. The middle of the frame is see-through: place the frame over what you want to record. Clicks in the middle go through to the program underneath. Drag the frame by its title strip and resize it from its edges.
+
+- **Orientation** and **Ratio** set the shape of the recorded area (1:1 to start). Resizing the frame keeps that shape. With **Freehand** ticked the frame resizes freely; unticking it snaps the area to the closest ratio.
+- The recorded area is at least 480 pixels on its shorter side, with no upper limit. It must be on one monitor; while it crosses from one monitor to another, Record is grayed out.
+- **Width** and **Height** set the recorded area's size in pixels (with the − and + buttons, by typing, or with the mouse wheel), keeping its center where it is. With a ratio they change in whole ratio steps, so both change together; with Freehand each changes on its own. They go up to the largest size at which the whole recorder, controls included, fits on the screen.
+- **FPS** is how many frames are recorded each second (10 to start).
+- **Record** (or **Ctrl+Shift+F9** from any program) starts recording; the line around the area turns red and the frame can't be moved or resized. Recording again replaces the last recording.
+- **Stop** (or **Ctrl+Shift+F10**) stops it. The frame count and time are shown below the buttons, with a warning when there are more frames than one sheet can hold.
+- **Reset** clears the recording and puts the frame back to 1:1 Landscape at 480 × 480, centered on its monitor.
+- **Save** closes the recorder and opens the recording in the main window as if it were a video clip, named Recording0001, Recording0002 and so on. If the sprite sheet has unsaved changes, you're asked first.
+
+The mouse pointer is never recorded. The recording isn't kept as a file: until you save the sprite sheet, it counts as an unsaved change, and it's gone once you open another file or close the program. The recorder remembers its size, position, ratio and FPS.
+
 ## Saving a GIF
 Save GIF opens **GIF Settings**, then asks where to save:
 - **GIF width** in pixels (it remembers the last value).
@@ -220,7 +234,7 @@ Desktop, Documents, Downloads, Pictures, Videos and Music are shown and stored b
 **File > Close Current File** (Ctrl+W) unloads the current file: the sheet preview shows the drop hint again, the animation preview goes blank, and the expanded preview closes. Your Sheet Layout, aspect ratio and play mode settings stay as they are.
 
 ## Unsaved changes
-If the sprite sheet has changed since you last saved it, opening another file, closing the current file or closing the program asks whether to save it first (Save, Don't Save or Cancel). Extracting frames again counts as a change when the new sheet differs from the one you last saved or opened.
+If the sprite sheet has changed since you last saved it, opening another file, closing the current file or closing the program asks whether to save it first (Save, Don't Save or Cancel). Extracting frames again counts as a change when the new sheet differs from the one you last saved or opened. A screen recording counts as unsaved until its sprite sheet is saved.
 
 ## Readme and Release Notes windows
 Help > Readme (F1) and Help > Release Notes each open in their own window over the main window, with a table of contents at the top. Click an entry to jump to that section, and "Back to contents" at the end of each section to return. The windows can stay open while you work.
@@ -238,6 +252,8 @@ These work from the main window, the expanded preview and the Readme and Release
 - **Ctrl+Z**: undo the last removed frame.
 - **Ctrl+Shift+Z**: restore all removed frames.
 - **F1**: open this Readme.
+
+While the recorder is open, **Ctrl+Shift+F9** starts recording and **Ctrl+Shift+F10** stops it, whichever program you're in.
 
 These work from the main window and the expanded preview, except while typing in a box (such as Start, Length or Cell):
 - **Space**: pause or play the preview.
